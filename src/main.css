@@ -1,9 +1,23 @@
-html, body {
+html {
     font-family: "Fira Code";
     margin: 0px;
     padding: 0px;
-    height: 80%;
+    height: 100%;
     background-color: white;
+    overflow-y: overlay;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 header {
@@ -20,7 +34,7 @@ header {
 
 #input-box {
     font-size: 40px;
-    margin: 100px max(60px, 10%);
+    margin: 10px max(60px, 10%);
     height: 211.2px;
     overflow: hidden;
 }
@@ -29,12 +43,12 @@ header {
     background-color: red;
     border: 3px solid red;
     color: white;
-    width: 80%;
-    height: min(30%, 100px);
-    margin: 0% 10%;
+    height: 100px;
+    margin: 0% max(60px, 10%);
+    padding: 0px;
     font-family: monospace;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #morse-button:active {
@@ -45,6 +59,12 @@ header {
 #morse-button:focus {
     outline: none;
     border-color: black;
+}
+
+#links {
+    margin: 10px 0px;
+    width: 100%;
+    text-align: center;
 }
 
 #before-caret {

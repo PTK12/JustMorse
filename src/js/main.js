@@ -28,12 +28,11 @@ function setup_textbox(words = load_words()) {
     txt.innerHTML = `<span id="before-caret"></span><span id="caret">${words[0]}</span><span id="after-caret">${words.slice(1)}</span>`;
 }
 
-function setup_autoscroll(options = {"behavior": "smooth"}, time = 500) {
-    if (setup_autoscroll.interval) {
-        clearInterval(setup_autoscroll.interval);
-    } // static variable innit
-
-    setup_autoscroll.interval = setInterval(() => document.getElementById("caret").scrollIntoView(options), time);
+function setup_autoscroll(time = 500) {
+    setInterval(() => {
+        let caret = document.getElementById("caret");
+        caret.parentElement.scrollTo({top: caret.offsetTop - caret.parentNode.offsetTop, behavior: "smooth"});
+    }, time);
 }
 
 setup_textbox();
