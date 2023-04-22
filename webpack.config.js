@@ -18,6 +18,7 @@ module.exports = {
                 { from: "src/main.css" },
                 { from: "src/favicon.ico" },
                 { from: "src/json", to: "json" },
+                { from: "src/assets", to: "assets" },
             ]
         })
     ],
