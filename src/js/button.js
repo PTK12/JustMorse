@@ -42,8 +42,9 @@ export class Button {
     end_sound() {
         if (this.osc == null) return;
 
-        this.node.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.01);
-        this.node.gain.setValueAtTime(0, context.currentTime + 0.01);
+        let time = context.currentTime + 0.015
+        this.node.gain.exponentialRampToValueAtTime(0.01, time);
+        this.osc.stop(time);
         this.osc = null;
     }
 
