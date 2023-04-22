@@ -29,16 +29,21 @@ export class Button {
         context.resume();
 
         this.osc = context.createOscillator();
+        this.node = context.createGain();
+
         this.osc.type = type;
-        this.osc.frequency.value = frequency;
-        this.osc.connect(context.destination);
+        this.osc.frequency.value = frequency;        
+
+        this.osc.connect(this.node);
+        this.node.connect(context.destination);
         this.osc.start();
     }
 
     end_sound() {
         if (this.osc == null) return;
 
-        this.osc.stop()
+        this.node.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.01);
+        this.node.gain.setValueAtTime(0, context.currentTime + 0.01);
         this.osc = null;
     }
 
