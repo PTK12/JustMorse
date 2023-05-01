@@ -16,6 +16,7 @@ module.exports = {
             patterns: [
                 { from: "src/index.html" },
                 { from: "src/main.css" },
+                { from: "src/favicon.ico" },
                 { from: "src/json", to: "json" },
             ]
         })
