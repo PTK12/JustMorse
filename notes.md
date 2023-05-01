@@ -15,6 +15,7 @@
 - [ ] text wrap by word / letter
 - [ ] alternative colour schemes (dark mode?)
 - [ ] show current decoded letter
+- [ ] custom carets
 - [ ] real time graph
    - [ ] relative vs fixed cursor
    - [ ] raw vs processed 
