@@ -1,0 +1,67 @@
+html, body {
+    font-family: "Fira Code";
+    margin: 0px;
+    padding: 0px;
+    height: 80%;
+    background-color: white;
+}
+
+header {
+    color: white;
+    background-color: red;
+    font-weight: normal;
+    font-size: 40px;
+    writing-mode: vertical-rl;
+
+    position: absolute;
+    top: 80px;
+    padding: 20px 0px;
+}
+
+#input-box {
+    font-size: 40px;
+    margin: 100px max(60px, 10%);
+    height: 200px;
+    overflow: hidden;
+}
+
+#morse-button {
+    background-color: red;
+    border: 3px solid red;
+    color: white;
+    width: 80%;
+    height: min(30%, 100px);
+    margin: 0% 10%;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#morse-button:active {
+    background-color: #ee0000;
+    color: #eeeeee;
+}
+
+#morse-button:focus {
+    outline: none;
+    border-color: black;
+}
+
+#before-caret {
+    color: grey;
+}
+
+#caret {
+    display: inline;
+    margin: 0px;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background: rgba(255, 0, 0, 1);
+    }    
+    50% {
+        background: rgba(255, 0, 0, 0);
+    }
+}
