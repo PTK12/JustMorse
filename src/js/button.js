@@ -1,6 +1,6 @@
 import { Morse } from "./morse.js";
 
-const context = new window.AudioContext();
+let context = new window.AudioContext();
 
 export class Button {
     constructor(morse = new Morse()) {
@@ -23,9 +23,10 @@ export class Button {
         }
     }
 
-
     play_sound(type = "sine", frequency = 440) {
         if (this.osc != null) return;
+
+        context.resume();
 
         this.osc = context.createOscillator();
         this.osc.type = type;

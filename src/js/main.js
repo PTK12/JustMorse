@@ -3,25 +3,24 @@ import { load_words } from "./text.js";
 
 function bind_button(button = new Button()) {
     let btn = document.getElementById("morse-button");
-    btn.addEventListener("mousedown", event => {
-        button.start_press();
-    })
 
-    btn.addEventListener("mouseup", event => {
-        button.end_press();
-    }) 
+    btn.addEventListener("mousedown", event => { button.start_press(); });
+    btn.addEventListener("mouseup", event => { button.end_press(); });
+
+    btn.addEventListener("touchstart", event => { button.start_press(); event.preventDefault(); });
+    btn.addEventListener("touchend", event => { button.end_press(); event.preventDefault(); });
 
     window.addEventListener("keydown", event => {
         if (event.key == " " && !event.repeat) {
             button.start_press();
         }
-    })
+    });
 
     window.addEventListener("keyup", event => {
         if (event.key == " ") {
             button.end_press();
         }
-    })
+    });
 }
 
 function setup_textbox(words = load_words()) {
